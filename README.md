@@ -1,4 +1,4 @@
-# Pinspired
+
 
 Pinterest-inspired full stack web application built with React, Node.js, PostgreSQL, Prisma, Cloudinary, and Tailwind CSS.
 
