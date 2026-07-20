@@ -60,37 +60,53 @@ const [isPostModalOpen, setIsPostModalOpen] = useState(false);
       <section className="w-full">
 
         ```jsx id="i9ii9"
-<div className="mb-16">
+<div className="mb-24">
 
-  {/* Label */}
+  {/* Editorial Label */}
 
-  <div className="inline-flex items-center gap-3 border border-white/10 bg-white/[0.03] rounded-full px-5 py-2 mb-10">
+  <div className="inline-flex items-center gap-3 rounded-full border border-white/10 bg-white/[0.03] px-5 py-2 mb-12">
 
-    <div className="w-2 h-2 rounded-full bg-orange-400" />
+    <div className="h-2 w-2 rounded-full bg-orange-500" />
 
-    <p className="text-xs uppercase tracking-[0.25em] text-gray-400">
-
-
-
+    <p className="text-xs uppercase tracking-[0.3em] text-gray-400">
+      
     </p>
 
   </div>
 
   {/* Hero */}
 
-  <div className="grid grid-cols-1 xl:grid-cols-2 gap-24 items-end">
+  <div className="
+grid
+grid-cols-1
+xl:grid-cols-[1.1fr_0.9fr]
+items-center
+gap-16
+xl:gap-24
+">
+
+    {/* Left */}
 
     <div>
 
-      <h1 className="text-6xl
-md:text-7xl
-xl:text-8xl leading-[0.9] tracking-tight font-serif font-light mb-8">
+      <h1 className="
+font-serif
+text-5xl
+sm:text-6xl
+lg:text-7xl
+xl:text-[92px]
+leading-[0.92]
+tracking-tight
+">
 
         Discover
+
         <br />
 
-        <span className="italic text-orange-400">
+        <span className="italic text-orange-500">
+
           visual
+
         </span>
 
         <br />
@@ -99,21 +115,47 @@ xl:text-8xl leading-[0.9] tracking-tight font-serif font-light mb-8">
 
       </h1>
 
-      <p className="text-gray-400 text-xl max-w-xl leading-relaxed mb-10">
+      <p className="mt-8 max-w-xl text-xl leading-relaxed text-gray-400">
 
-        An editorial feed of premium creative work — handpicked from artists, designers, and creators shaping visual culture.
+        Explore premium editorial photography, architecture,
+        interiors, fashion and creative inspiration curated
+        from creators around the world.
 
       </p>
 
-      <div className="flex items-center gap-5">
+      <div className="mt-10 flex flex-wrap gap-5">
 
-        <button className="bg-white text-black px-8 py-4 rounded-full font-semibold hover:scale-105 transition duration-300">
+        <button
+          className="
+          rounded-full
+          bg-gradient-to-r
+          from-orange-500
+          to-red-500
+          px-8
+          py-4
+          font-semibold
+          shadow-lg
+          hover:scale-105
+          transition-all
+        "
+        >
 
           Explore Feed
 
         </button>
 
-        <button className="border border-white/10 bg-white/[0.03] px-8 py-4 rounded-full hover:bg-white/[0.05] transition duration-300">
+        <button
+          className="
+          rounded-full
+          border
+          border-white/10
+          bg-white/[0.03]
+          px-8
+          py-4
+          hover:bg-white/5
+          transition-all
+        "
+        >
 
           Trending Boards
 
@@ -123,43 +165,133 @@ xl:text-8xl leading-[0.9] tracking-tight font-serif font-light mb-8">
 
     </div>
 
-<div className="flex gap-4 overflow-x-auto mt-14
-mb-16 pb-2 no-scrollbar">
+    {/* Featured Card */}
 
-  {[
-    "All",
-    "Fashion",
-    "Travel",
-    "Architecture",
-    "Editorial",
-    "Craft",
-    "Typography"
-  ].map((category, index) => (
+    <div>
 
-    <button
-      key={category}
-      className={`px-6 py-3 rounded-full whitespace-nowrap transition duration-300 border ${
-        index === 0
-          ? "bg-white text-black border-white"
-          : "bg-white/[0.03] border-white/10 hover:bg-white/[0.06]"
-      }`}
-    >
+      <div className="
+relative
+overflow-hidden
+rounded-[36px]
+border
+border-white/10
+aspect-[4/5]
+max-h-[640px]
+">
 
-      {category}
+        <img
+          src="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?w=1200"
+          alt=""
+          className="h-full w-full object-cover"
+        />
 
-    </button>
+        <div className="absolute inset-0 bg-gradient-to-t from-black via-black/10" />
 
-  ))}
+        <div className="bottom-10
+left-10
+right-10">
 
-</div>
+          <span className="rounded-full bg-white/10 backdrop-blur px-4 py-2 text-sm">
 
+            Featured Collection
 
-    {/* Stats */}
+          </span>
 
-    <div className="grid grid-cols-2 gap-6">
+          <h2 className="mt-5 font-serif text-4xl">
+
+            Scandinavian Interiors
+
+          </h2>
+
+          <p className="mt-3 text-gray-300">
+
+            Modern architecture · Minimal living
+
+          </p>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+  {/* Categories */}
+
+  <div className="mt-28">
+
+    <h2 className="mb-8 font-serif text-3xl">
+
+      Popular Categories
+
+    </h2>
+
+    <div className="flex flex-wrap gap-4 max-w-6xl">
 
       {[
-        ["12.4k", "Pins Curated"],
+        "Fashion",
+        "Travel",
+        "Architecture",
+        "Interior",
+        "Editorial",
+        "Photography",
+        "Nature",
+        "Typography",
+        "Art",
+      ].map((category) => (
+
+        <button
+          key={category}
+          className="
+            group
+            rounded-full
+            border
+            border-white/10
+            bg-white/[0.03]
+            px-6
+            py-3
+            text-sm
+            font-medium
+            transition-all
+            duration-300
+            hover:bg-white
+            hover:text-black
+            hover:border-white
+            hover:-translate-y-1
+          "
+        >
+
+          {category}
+
+        </button>
+
+      ))}
+
+    </div>
+
+  </div>
+
+  {/* Stats */}
+
+  <div className="mt-20">
+
+    <h2 className="mb-8 font-serif text-3xl">
+
+      Today's Highlights
+
+    </h2>
+
+    <div className="
+grid
+grid-cols-2
+xl:grid-cols-4
+gap-6
+mt-12
+">
+
+      {[
+        ["12.4K", "Pins Curated"],
         ["2,180", "Creators"],
         ["640", "Boards Live"],
         ["+318", "This Week"],
@@ -167,16 +299,31 @@ mb-16 pb-2 no-scrollbar">
 
         <div
           key={label}
-          className="bg-white/[0.03] border border-white/5 rounded-[32px] p-10"
+          className="
+group
+rounded-[30px]
+border
+border-white/10
+bg-gradient-to-b
+from-white/[0.04]
+to-white/[0.02]
+p-8
+transition-all
+duration-500
+hover:-translate-y-1
+hover:border-orange-500/30
+hover:bg-white/[0.05]
+"
         >
 
-          <h3 className="text-5xl font-serif mb-3">
+          <h3 className="font-serif text-4xl
+xl:text-5xl">
 
             {value}
 
           </h3>
 
-          <p className="text-xs uppercase tracking-[0.25em] text-gray-500">
+          <p className="mt-3 text-xs uppercase tracking-[0.3em] text-gray-500">
 
             {label}
 
@@ -192,6 +339,27 @@ mb-16 pb-2 no-scrollbar">
 
 </div>
 
+{/* Latest Feed */}
+
+<div className="mt-24 mb-10 flex items-center justify-between">
+
+  <div>
+
+    <h2 className="font-serif text-4xl">
+
+      Latest Inspiration
+
+    </h2>
+
+    <p className="mt-2 text-gray-500">
+
+      Fresh visual discoveries from the community.
+
+    </p>
+
+  </div>
+
+</div>
 
 
         {posts.length === 0 ? (
@@ -241,7 +409,28 @@ mb-16 pb-2 no-scrollbar">
 
         <button
           onClick={() => setIsModalOpen(true)}
-          className="fixed bottom-10 right-10 lg:bottom-12 lg:right-12 w-16 h-16 rounded-full bg-white text-black text-4xl font-light shadow-2xl hover:scale-110 transition duration-300 z-40"
+          className="
+fixed
+bottom-10
+right-10
+z-40
+flex
+h-16
+w-16
+items-center
+justify-center
+rounded-full
+bg-gradient-to-br
+from-orange-500
+to-red-500
+text-4xl
+text-white
+shadow-[0_20px_50px_rgba(255,85,0,0.45)]
+transition-all
+duration-300
+hover:scale-110
+hover:rotate-90
+"
         >
           +
         </button>

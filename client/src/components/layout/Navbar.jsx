@@ -108,10 +108,14 @@ const Navbar = () => {
                       relative
                       overflow-hidden
                       rounded-full
-                      bg-white
-                      px-5 py-2.5
+                      bg-gradient-to-br
+                    from-orange-500
+                    to-red-500
+                    text-xl
+                    text-white
+                    shadow-[0_20px_50px_rgba(255,85,0,0.45)]
+                      px-5 py-3
                       font-semibold
-                      text-black
                       transition-all duration-300
                       hover:scale-105
                       hover:shadow-[0_0_20px_rgba(255,255,255,0.35)]
