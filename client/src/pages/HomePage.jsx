@@ -69,7 +69,7 @@ const [isPostModalOpen, setIsPostModalOpen] = useState(false);
     <div className="h-2 w-2 rounded-full bg-orange-500" />
 
     <p className="text-xs uppercase tracking-[0.3em] text-gray-400">
-      
+    
     </p>
 
   </div>
