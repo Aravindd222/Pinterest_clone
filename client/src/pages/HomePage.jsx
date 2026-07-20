@@ -187,7 +187,7 @@ max-h-[640px]
 
         <div className="absolute inset-0 bg-gradient-to-t from-black via-black/10" />
 
-        <div className="bottom-10
+        <div className="absolute bottom-10
 left-10
 right-10">
 
