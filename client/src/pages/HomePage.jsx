@@ -26,19 +26,15 @@ const [isPostModalOpen, setIsPostModalOpen] = useState(false);
   useEffect(() => {
 
     const fetchPosts = async () => {
-        setLoading(false);
-
-      try {
-
-        const data = await getPosts();
-
-        setPosts(data);
-
-      } catch (error) {
-
-        console.log(error);
-      }
-    };
+  try {
+    const data = await getPosts();
+    setPosts(data);
+  } catch (error) {
+    console.log(error);
+  } finally {
+    setLoading(false);
+  }
+};
 
     fetchPosts();
 
@@ -61,7 +57,7 @@ const [isPostModalOpen, setIsPostModalOpen] = useState(false);
   return (
     <MainLayout>
 
-      <section className="max-w-[1600px] mx-auto">
+      <section className="w-full">
 
         ```jsx id="i9ii9"
 <div className="mb-16">
@@ -74,7 +70,7 @@ const [isPostModalOpen, setIsPostModalOpen] = useState(false);
 
     <p className="text-xs uppercase tracking-[0.25em] text-gray-400">
 
-      Editorial Feed
+
 
     </p>
 
@@ -82,11 +78,13 @@ const [isPostModalOpen, setIsPostModalOpen] = useState(false);
 
   {/* Hero */}
 
-  <div className="grid grid-cols-1 xl:grid-cols-2 gap-16 items-end">
+  <div className="grid grid-cols-1 xl:grid-cols-2 gap-24 items-end">
 
     <div>
 
-      <h1 className="text-[5rem] md:text-[7rem] leading-[0.9] tracking-tight font-serif font-light mb-8">
+      <h1 className="text-6xl
+md:text-7xl
+xl:text-8xl leading-[0.9] tracking-tight font-serif font-light mb-8">
 
         Discover
         <br />
@@ -101,7 +99,7 @@ const [isPostModalOpen, setIsPostModalOpen] = useState(false);
 
       </h1>
 
-      <p className="text-gray-400 text-xl max-w-2xl leading-relaxed mb-10">
+      <p className="text-gray-400 text-xl max-w-xl leading-relaxed mb-10">
 
         An editorial feed of premium creative work — handpicked from artists, designers, and creators shaping visual culture.
 
@@ -125,7 +123,8 @@ const [isPostModalOpen, setIsPostModalOpen] = useState(false);
 
     </div>
 
-<div className="flex gap-4 overflow-x-auto mb-12 pb-2 no-scrollbar">
+<div className="flex gap-4 overflow-x-auto mt-14
+mb-16 pb-2 no-scrollbar">
 
   {[
     "All",
@@ -134,8 +133,7 @@ const [isPostModalOpen, setIsPostModalOpen] = useState(false);
     "Architecture",
     "Editorial",
     "Craft",
-    "Typography",
-    "Interior",
+    "Typography"
   ].map((category, index) => (
 
     <button
@@ -158,7 +156,7 @@ const [isPostModalOpen, setIsPostModalOpen] = useState(false);
 
     {/* Stats */}
 
-    <div className="grid grid-cols-2 gap-5">
+    <div className="grid grid-cols-2 gap-6">
 
       {[
         ["12.4k", "Pins Curated"],
@@ -169,7 +167,7 @@ const [isPostModalOpen, setIsPostModalOpen] = useState(false);
 
         <div
           key={label}
-          className="bg-white/[0.03] border border-white/5 rounded-[32px] p-8"
+          className="bg-white/[0.03] border border-white/5 rounded-[32px] p-10"
         >
 
           <h3 className="text-5xl font-serif mb-3">
@@ -204,7 +202,16 @@ const [isPostModalOpen, setIsPostModalOpen] = useState(false);
 
         ) : (
 
-          <div className="ccolumns-2 md:columns-3 xl:columns-4 2xl:columns-5 gap-6 space-y-6">
+          <div
+              className="
+                columns-1
+                sm:columns-2
+                lg:columns-3
+                xl:columns-4
+                2xl:columns-5
+                gap-6
+                space-y-6"
+>
 
   {loading ? (
 
@@ -234,7 +241,7 @@ const [isPostModalOpen, setIsPostModalOpen] = useState(false);
 
         <button
           onClick={() => setIsModalOpen(true)}
-          className="fixed bottom-8 right-8 w-16 h-16 rounded-full bg-white text-black text-4xl font-light shadow-2xl hover:scale-110 transition duration-300 z-40"
+          className="fixed bottom-10 right-10 lg:bottom-12 lg:right-12 w-16 h-16 rounded-full bg-white text-black text-4xl font-light shadow-2xl hover:scale-110 transition duration-300 z-40"
         >
           +
         </button>

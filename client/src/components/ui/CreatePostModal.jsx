@@ -131,19 +131,63 @@ const CreatePostModal = ({
             onChange={(e) =>
               setCategory(e.target.value)
             }
-            className="w-full bg-black/40 border border-white/10 rounded-xl px-4 py-4 outline-none"
+            className="w-full bg-black/40 border border-white/10 rounded-2xl px-4 py-5 outline-none focus:border-orange-400
+focus:bg-[#222]
+transition-all"
           />
 
-          <input
-            type="file"
-            accept="image/*"
-            onChange={handleImageChange}
-            className="w-full"
-          />
+    
+            <label
+            className="
+                    flex
+                    h-64
+                    cursor-pointer
+                    flex-col
+                    items-center
+                    justify-center
+                    rounded-3xl
+                    border-2
+                    border-dashed
+                    border-white/10
+                    bg-white/[0.03]
+                    transition
+                    hover:border-orange-400
+                    hover:bg-white/[0.05]
+  "
+>
+    {preview ? (
+        <img
+            src={preview}
+            className="h-full w-full rounded-3xl object-cover"
+        />
+    ) : (
+        <>
+            <div className="text-6xl mb-4">+</div>
+
+            <p className="text-lg font-semibold">
+                Upload Image
+            </p>
+
+            <p className="text-gray-500 mt-2">
+                JPG, PNG, WEBP
+            </p>
+        </>
+    )}
+
+    <input
+        hidden
+        type="file"
+        accept="image/*"
+        onChange={handleImageChange}
+    />
+</label>
+            
+          
 
           {preview && (
 
             <img
+              
               src={preview}
               alt="Preview"
               className="w-full max-h-[400px] object-cover rounded-2xl"
@@ -154,7 +198,18 @@ const CreatePostModal = ({
           <button
             type="submit"
             disabled={loading}
-            className="w-full bg-white text-black py-4 rounded-xl font-semibold hover:scale-[1.02] transition duration-300 disabled:opacity-50"
+            className="
+w-full
+rounded-2xl
+bg-gradient-to-r
+from-orange-500
+to-red-500
+py-5
+font-bold
+text-lg
+hover:scale-[1.02]
+transition
+"
           >
             {loading ? "Uploading..." : "Create Post"}
           </button>

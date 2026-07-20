@@ -5,8 +5,21 @@ const Navbar = () => {
   const { user, logout } = useAuth();
 
   return (
-    <nav className="fixed top-0 left-0 w-full z-50 px-4 pt-4">
-      <div className="max-w-7xl mx-auto">
+    <nav
+  className="
+    fixed
+    inset-x-0
+    top-0
+    z-50
+    pt-5
+    px-6
+    sm:px-8
+    lg:px-10
+    xl:px-12
+    2xl:px-16
+  "
+>
+      <div className="max-w-[1700px] mx-auto">
         <div
           className="
             relative
@@ -22,7 +35,7 @@ const Navbar = () => {
           <div className="absolute -top-10 left-10 h-32 w-32 rounded-full bg-pink-500/10 blur-3xl" />
           <div className="absolute -right-10 top-0 h-32 w-32 rounded-full bg-cyan-500/10 blur-3xl" />
 
-          <div className="relative flex items-center justify-between px-6 py-4 md:px-8">
+          <div className="relative flex items-center justify-between px-6 py-5 md:px-8">
             
             {/* Logo */}
             <Link
@@ -30,7 +43,7 @@ const Navbar = () => {
               className="
                 group
                 flex items-center gap-2
-                text-2xl md:text-3xl
+                text-3xl
                 font-black
                 tracking-tight
                 transition duration-300
