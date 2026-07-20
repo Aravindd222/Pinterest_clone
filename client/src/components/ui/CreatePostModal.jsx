@@ -184,17 +184,6 @@ transition-all"
             
           
 
-          {preview && (
-
-            <img
-              
-              src={preview}
-              alt="Preview"
-              className="w-full max-h-[400px] object-cover rounded-2xl"
-            />
-
-          )}
-
           <button
             type="submit"
             disabled={loading}
